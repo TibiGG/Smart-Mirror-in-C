@@ -2,13 +2,12 @@
 
 This repository contains software that you can use to make yourself a **Smart Mirror** using a Raspberry Pi or any other PC running a Linux distribution*. 
 
-Our smart mirror has, at the point of writing this file, _three_ main widgets:
+Our smart mirror has, at the point of writing this file, _four_ main widgets:
 
 * Date & Time
-
 * Calendar & Schedule
-
 * Note
+* Weather (newly added, not yet documented)
 
 Each of these widgets can be toggled on or off within the code. We will continue working on ways to improve  user experience, adding more widgets and easier control to toggle and move the widgets around. But please bear in mind that we have done all of this extension in roughly two days, so of course is not perfect. 
 
@@ -44,19 +43,13 @@ Try running the same command with `pip3` instead of `pip`, in case your system d
 
 Now we can set up the actual mirror.
 
-We will assume that you read this file from the `extension/` directory. If you have not done so yet, from the main directory, run this command:
-
-```bash
-$ cd extension/ 
-```
-
-Then simply run make:
+We will assume you are in the main project directory. If that is the case, now simply run make.
 
 ```bash
 make
 ```
 
-By now, you should have an executable called `mirror`. If you run it by typing `./mirror` inside the extension library, you should now get a black screen with white, bright text, looking similar to this image:
+You should now have an executable called `mirror`. If you run it by typing `./mirror` inside the extension library, you should now get a black screen with white, bright text, looking similar to this image:
 
 ![mirrorss](/images/mirrorss.png)
 
@@ -82,12 +75,12 @@ If you wish to connect your own google account to the mirror, follow these steps
 
    Click this [link](https://developers.google.com/calendar/quickstart/python) and press the blue `ENABLE THE GOOGLE CALENDAR API` and download the credentials. You should now have in your downloads folder a file called `credentials.json`
 
-2. Replace the dummy`credentials.json` with your own;
+2. Replace the dummy `credentials.json` with your own;
 
    You will find this file in the `widgets/` directory. If you are in the main folder, cd into it using this command: 
 
    ```bash
-   cd extension/widgets/
+   cd widgets/
    ```
 
    Now if you run `ls`, you will see, among other files, the dummy credentials. Just replace that file with your own and you are now all set!
@@ -114,7 +107,7 @@ Note is a very simple program. Given a relatively short string (note, quote, rem
 
 To change it, `cd` back into the `widgets/` directory. Then open file `quotes.txt` and change it's content to your own desire. 
 
-Resizable notes may come in a later update.
+Resizeable notes may come in a later update.
 
 
 
@@ -126,7 +119,7 @@ This will involve writing in the `mirror.c` file, but don't worry. If you follow
 
 This involves commenting out the call to the function which draws the widget onto the mirror. 
 
-First, if you are into any other directory, `cd ` into the `extension/` directory.
+Make sure you are in the main directory.
 
 Then, open file 'mirror.c' using your editor of preference. 
 
